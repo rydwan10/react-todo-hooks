@@ -1,24 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+// Import the components
+import InputTodo from './components/InputTodo';
+import TodoList from './components/TodoList';
+
+const App = () => {
+
+  // ?Input text for todos
+  const [inputText, setInputText] = useState('');
+
+  // ?Real todo state
+  const [todos, setTodos] = useState([
+    {
+      id: Math.random() * 100,
+      title: 'installing react js boilerplate',
+      completed: false
+    },
+    {
+      id: Math.random() * 100,
+      title: 'installing styled component package',
+      completed: false
+    },
+    {
+      id: Math.random() * 100,
+      title: 'streching :)',
+      completed: false
+    },
+  ])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App-header">
+      <div className="App-container">
+      <img className="App-logo" src={logo} alt="react logo" />
+        <h4>Muhammad Rydwan's Todo List</h4>
+        <InputTodo inputText={inputText} setInputText={setInputText} todos={todos}  setTodos={setTodos} />
+        <TodoList todos={todos} />
+      </div>
     </div>
   );
 }
