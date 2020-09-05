@@ -13,7 +13,6 @@ const InputText = styled.input`
     padding: 5px 8px;
     width: 502px;
     font-size: 24px;
-
 `;
 
 const Button = styled.button`
@@ -23,7 +22,7 @@ const Button = styled.button`
     background-color: #61dafb;
     border: none;
     color: #ffff;
-
+    cursor: pointer;
 `
 
 

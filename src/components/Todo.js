@@ -14,15 +14,17 @@ const DeleteButton = styled.button`
     background-color: #ff4e4e;
     border: none;
     color: #ffff;
+    cursor: pointer;
 `;
 
-const DoneButton = styled.button`
+const CompleteButton = styled.button`
     padding: 10px 19px;
     font-size: 16px;
     margin-left: 3px;
     background-color: #58d658;
     border: none;
     color: #ffff;
+    cursor: pointer;
 `
 
 const Container = styled.div`
@@ -33,12 +35,28 @@ const Container = styled.div`
 `;
 
 
-const Todo = ({ todo }) => {
+const Todo = ({ todo, todos, setTodos }) => {
+
+    // Handle function
+    const handleComplete = () => {
+        setTodos(todos.map(item => {
+            if(item.id === todo.id) {
+                return { ...item, completed: !item.completed }
+            }
+            return item;
+        } ))
+    }
+
+    const handleDelete = () => {
+        setTodos(todos.filter(item => item.id !== todo.id))
+        // setTodos(todos.splice())                                        
+    }
+
     return (
         <Container>
-            <TodoItem readOnly={true} value={todo.title}/>
-            <DoneButton>Done</DoneButton>
-            <DeleteButton>Delete</DeleteButton>
+            <TodoItem className={todo.completed ? "completed" : ''} readOnly={true} value={todo.title}/>
+            <CompleteButton onClick={handleComplete}>Done</CompleteButton>
+            <DeleteButton onClick={handleDelete}>Delete</DeleteButton>
         </Container>
     )
 }

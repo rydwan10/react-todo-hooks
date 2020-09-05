@@ -1,11 +1,11 @@
 import React from 'react';
 import Todo from './Todo';
 
-const TodoList = ({ todos }) => {
+const TodoList = ({ todos, setTodos }) => {
     return (
         <React.Fragment>
             {todos.map(todo => (
-                    <Todo todo={todo} key={todo.id} />
+                    <Todo setTodos={setTodos} todos={todos} todo={todo} key={todo.id} />
                     ))
             }
         </React.Fragment>

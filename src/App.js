@@ -25,8 +25,8 @@ const App = () => {
     },
     {
       id: Math.random() * 100,
-      title: 'streching :)',
-      completed: false
+      title: 'Looking for budget SSD',
+      completed: true
     },
   ])
 
@@ -36,7 +36,7 @@ const App = () => {
       <img className="App-logo" src={logo} alt="react logo" />
         <h4>Muhammad Rydwan's Todo List</h4>
         <InputTodo inputText={inputText} setInputText={setInputText} todos={todos}  setTodos={setTodos} />
-        <TodoList todos={todos} />
+        <TodoList todos={todos} setTodos={setTodos} />
       </div>
     </div>
   );
