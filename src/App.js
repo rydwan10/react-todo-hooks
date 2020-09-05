@@ -34,7 +34,7 @@ const App = () => {
     <div className="App-header">
       <div className="App-container">
       <img className="App-logo" src={logo} alt="react logo" />
-        <h4>Muhammad Rydwan's Todo List</h4>
+        <h4 className="title-todo">Muhammad Rydwan's Todo List</h4>
         <InputTodo inputText={inputText} setInputText={setInputText} todos={todos}  setTodos={setTodos} />
         <TodoList todos={todos} setTodos={setTodos} />
       </div>

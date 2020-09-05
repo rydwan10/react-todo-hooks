@@ -15,6 +15,7 @@ const DeleteButton = styled.button`
     border: none;
     color: #ffff;
     cursor: pointer;
+    box-shadow: 3px 4px rgba(0, 0, 0, 0.2);
 `;
 
 const CompleteButton = styled.button`
@@ -25,6 +26,8 @@ const CompleteButton = styled.button`
     border: none;
     color: #ffff;
     cursor: pointer;
+    box-shadow: 3px 4px rgba(0, 0, 0, 0.2);
+    margin-right: 5px;
 `
 
 const Container = styled.div`
@@ -55,7 +58,7 @@ const Todo = ({ todo, todos, setTodos }) => {
     return (
         <Container>
             <TodoItem className={todo.completed ? "completed" : ''} readOnly={true} value={todo.title}/>
-            <CompleteButton onClick={handleComplete}>Done</CompleteButton>
+            <CompleteButton className={todo.completed ? "completed-button" : ''} onClick={handleComplete}>{todo.completed ? '-' : 'Check'}</CompleteButton>
             <DeleteButton onClick={handleDelete}>Delete</DeleteButton>
         </Container>
     )

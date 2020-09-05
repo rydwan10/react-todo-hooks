@@ -23,6 +23,7 @@ const Button = styled.button`
     border: none;
     color: #ffff;
     cursor: pointer;
+    box-shadow: 3px 4px rgba(0, 0, 0, 0.2);
 `
 
 
